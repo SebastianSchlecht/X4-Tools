@@ -1,0 +1,32 @@
+.form-group {
+    position: relative;
+}
+
+.suggestions {
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    list-style: none;
+    padding-left: 0px;
+    border: 1px solid gray;
+    max-height: 400px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.suggestionItem {
+    font-size: 1.1em;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.suggestionItem:hover {
+    background-color: rgba(65, 64, 64, 0.637);
+}
+
+.suggestionTitle {
+    font-weight: bolder;
+    font-size: 1.2em;
+    padding-left: 10px;
+}
