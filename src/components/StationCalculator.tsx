@@ -1,8 +1,8 @@
 import Header from './stationCalculator/Header';
 import { Card } from 'react-bootstrap'
-import StationModules from './stationCalculator/StationModules';
-import StationResources from './stationCalculator/StationResources';
-import StationSummary from './stationCalculator/StationSummary';
+import ModulesCard from './stationCalculator/ModulesCard';
+import ResourcesCard from './stationCalculator/ResourcesCard';
+import SummaryCard from './stationCalculator/SummaryCard';
 
 import '../css/stationCalculator.css'
 
@@ -12,9 +12,9 @@ const StationCalculator: React.FC = () => {
             <Header />
             <Card><Card.Body>
                 <div className='row'>
-                    <div className='col-12 col-lg-4'><StationModules></StationModules></div>
-                    <div className='col-12 col-lg-4'><StationResources></StationResources></div>
-                    <div className='col-12 col-lg-4'><StationSummary></StationSummary></div>
+                    <div className='col-12 col-lg-4'><ModulesCard></ModulesCard></div>
+                    <div className='col-12 col-lg-4'><ResourcesCard></ResourcesCard></div>
+                    <div className='col-12 col-lg-4'><SummaryCard></SummaryCard></div>
                 </div>
             </Card.Body></Card>
         </div>

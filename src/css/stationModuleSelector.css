@@ -30,3 +30,11 @@
     font-size: 1.2em;
     padding-left: 10px;
 }
+
+.move {
+    cursor: move;
+}
+
+.clickable {
+    cursor: pointer;
+}

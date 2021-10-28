@@ -6,6 +6,7 @@ type SuggestionsProp = {
     currentFilter?: string
 }
 
+//ToDo Replace SuggestionGroup with a exported Station type. Get them with a station provider that is DI
 export type SuggestionGroup = {
     title: string,
     suggestions: string[]
@@ -36,15 +37,14 @@ const SuggestionsList: React.FC<SuggestionsProp> = ({suggestionsGroups, currentF
     }
     , [ suggestionsGroups, currentFilter ])
 
-    return (
-        
+    return (     
         <ul className="suggestions">
             {
                 filterdSuggestionGroups.map((group) =>                  
                     <div key={group.title}>
                         <li className="suggestionTitle">{group.title}</li>
                         {
-                            group.suggestions.map((suggestion) => <li className="suggestionItem" key={suggestion}>{suggestion}</li>)
+                            group.suggestions.map((suggestion) => <li className="suggestionItem" key={suggestion} tabIndex={0}>{suggestion}</li>)
                         }
                     </div>
                 )
