@@ -30,18 +30,21 @@ const ModuleCard: React.FC = () => {
     }
   };
 
+  const onItemSelected = (selectedItem: string) => {
+    setInput(selectedItem);
+    setSuggestionVisible(false);
+  };
+
   return (
     <tr className="test" onBlur={onBlur}>
       <td>
         <div className="form-group">
           <InputGroup size="sm" onFocus={() => setSuggestionVisible(true)}>
-            <FormControl
-              placeholder="(Select)"
-              defaultValue={input}
-              onChange={(e) => setInput(e.target.value)}
-            ></FormControl>
+            <FormControl placeholder="(Select)" value={input} onChange={(e) => setInput(e.target.value)} />
           </InputGroup>
-          {suggestionVisible && <SuggestionsList suggestionsGroups={dummyPlaceholder} currentFilter={input} />}
+          {suggestionVisible && (
+            <SuggestionsList suggestionsGroups={dummyPlaceholder} currentFilter={input} onSelection={onItemSelected} />
+          )}
         </div>
       </td>
       <td>
