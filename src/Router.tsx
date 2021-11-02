@@ -11,13 +11,9 @@ const Router: React.FC<RouterHeader> = ({ header }) => {
     <HashRouter>
       {header}
       <Switch>
-        <Route
-          exact
-          path="/station"
-          render={() => <StationCalculator />}
-        ></Route>
-        <Route exact path="/test" render={() => <Test />}></Route>
-        <Route render={() => <Redirect to="/station" />}></Route>
+        <Route exact path="/station" render={() => <StationCalculator />} />
+        <Route exact path="/test" render={() => <Test />} />
+        <Route render={() => <Redirect to="/station" />} />
       </Switch>
     </HashRouter>
   );

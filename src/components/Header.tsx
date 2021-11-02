@@ -5,10 +5,7 @@ import "../css/Header.css";
 
 const AppHeader: React.FC = () => {
   return (
-    <Navbar
-      bg="navbar navbar-expand navbar-dark flex-column flex-md-row bg-secondary shadow"
-      expand="lg"
-    >
+    <Navbar bg="navbar navbar-expand navbar-dark flex-column flex-md-row bg-secondary shadow" expand="lg">
       {/* <Container> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

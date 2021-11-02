@@ -34,8 +34,34 @@
         "error",
         "always"
       ],
-      "import/no-anonymous-default-export": "off"
-    }
+      "import/no-anonymous-default-export": "off",
+      "no-restricted-imports": [
+        "error",
+        {
+          "paths": [
+            "@material-ui/core",
+            "@material-ui/lab"
+          ],
+          "patterns": [
+            "@material-ui/*/*/*",
+            "!@material-ui/core/test-utils/*",
+            "!@material-ui/core/TablePagination/*",
+            "react-hook-form/*"
+          ]
+        }
+      ]
+    },
+    "overrides": [
+      {
+        "rules": {
+          "@typescript-eslint/explicit-module-boundary-types": 0
+        },
+        "files": [
+          "*.js",
+          "*.jsx"
+        ]
+      }
+    ]
   },
   "eslintIgnore": [
     "node_modules",

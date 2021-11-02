@@ -1,11 +1,5 @@
 import { Card, Button } from "react-bootstrap";
-import {
-  FaChartBar,
-  FaFile,
-  FaSave,
-  FaFolderOpen,
-  FaFileExport,
-} from "react-icons/fa";
+import { FaChartBar, FaFile, FaSave, FaFolderOpen, FaFileExport } from "react-icons/fa";
 
 const fc: React.FC = () => {
   return (
