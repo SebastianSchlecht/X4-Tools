@@ -1,11 +1,10 @@
 import { InputGroup, FormControl } from "react-bootstrap";
-import SuggestionsList, {
-  SuggestionGroup,
-} from "../suggestions/SuggestionsList";
+import SuggestionsList from "../suggestions/SuggestionsList";
 import { FaEllipsisV, FaTrash } from "react-icons/fa";
 import { FocusEvent, useState } from "react";
 
 import "../../css/stationModuleSelector.css";
+import { SuggestionGroup } from "../suggestions/useSuggestion";
 
 const dummyPlaceholder: SuggestionGroup[] = [
   {
@@ -42,12 +41,7 @@ const ModuleCard: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
             ></FormControl>
           </InputGroup>
-          {suggestionVisible && (
-            <SuggestionsList
-              suggestionsGroups={dummyPlaceholder}
-              currentFilter={input}
-            />
-          )}
+          {suggestionVisible && <SuggestionsList suggestionsGroups={dummyPlaceholder} currentFilter={input} />}
         </div>
       </td>
       <td>

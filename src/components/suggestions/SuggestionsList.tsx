@@ -1,49 +1,13 @@
 //import { InputGroup, FormControl } from 'react-bootstrap'
-import { useMemo } from "react";
+import { SuggestionGroup, useSuggestion } from "./useSuggestion";
 
 type SuggestionsProp = {
   suggestionsGroups: SuggestionGroup[];
   currentFilter?: string;
 };
 
-//ToDo Replace SuggestionGroup with a exported Station type. Get them with a station provider that is DI
-export type SuggestionGroup = {
-  title: string;
-  suggestions: string[];
-};
-
-function filterGroup(
-  group: SuggestionGroup,
-  filterLowerCase: string
-): SuggestionGroup | [] {
-  const newGroup: SuggestionGroup = {
-    title: group.title,
-    suggestions: group.suggestions.filter((item) =>
-      item.toLowerCase().includes(filterLowerCase)
-    ),
-  };
-
-  if (newGroup.suggestions.length === 0) {
-    return [];
-  } else {
-    return newGroup;
-  }
-}
-
-const SuggestionsList: React.FC<SuggestionsProp> = ({
-  suggestionsGroups,
-  currentFilter,
-}) => {
-  const filterdSuggestionGroups = useMemo(() => {
-    if (currentFilter) {
-      const filterLowerCase = currentFilter.toLowerCase();
-      return suggestionsGroups.flatMap((group) =>
-        filterGroup(group, filterLowerCase)
-      );
-    } else {
-      return suggestionsGroups;
-    }
-  }, [suggestionsGroups, currentFilter]);
+const SuggestionsList: React.FC<SuggestionsProp> = ({ suggestionsGroups, currentFilter }) => {
+  const filterdSuggestionGroups = useSuggestion(currentFilter, suggestionsGroups);
 
   return (
     <ul className="suggestions">
