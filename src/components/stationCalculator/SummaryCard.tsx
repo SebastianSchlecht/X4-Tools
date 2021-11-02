@@ -1,9 +1,5 @@
 const fc: React.FC = () => {
-    return (
-        <div>
-            c
-        </div>
-    )
-}
+  return <div>c</div>;
+};
 
-export default fc
+export default fc;

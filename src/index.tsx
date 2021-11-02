@@ -1,18 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import Router from './Router'
-import Header from './components/Header'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import Router from "./Router";
+import Header from "./components/Header";
 //import reportWebVitals from './reportWebVitals';
 
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <Header /> */}
-    <Router header={<Header/>} />
+    <Router header={<Header />} />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
