@@ -17,7 +17,12 @@ const dummyPlaceholder: SuggestionGroup[] = [
   },
 ];
 
-const ModuleCard: React.FC = () => {
+type ModuleCardProp = {
+  onDelete: (keyHint?: string | number) => void;
+  keyHint?: string | number;
+};
+
+const ModuleCard: React.FC<ModuleCardProp> = ({ onDelete, keyHint }) => {
   const [count, setCount] = useState(1);
   const [input, setInput] = useState("");
   const [suggestionVisible, setSuggestionVisible] = useState(false);
@@ -36,7 +41,7 @@ const ModuleCard: React.FC = () => {
   };
 
   return (
-    <tr className="test" onBlur={onBlur}>
+    <tr onBlur={onBlur}>
       <td>
         <div className="form-group">
           <InputGroup size="sm" onFocus={() => setSuggestionVisible(true)}>
@@ -55,14 +60,14 @@ const ModuleCard: React.FC = () => {
             min="0"
             value={count}
             onChange={(e) => setCount(Number(e.target.value))}
-          ></FormControl>
+          />
         </InputGroup>
       </td>
       <td>
         <FaEllipsisV className="move" />
       </td>
       <td>
-        <FaTrash className="clickable" />
+        <FaTrash className="clickable" onClick={() => onDelete(keyHint)} />
       </td>
     </tr>
   );
